@@ -20,7 +20,7 @@
 
 - 📖 [**Documentation**](https://pelikhan.github.io/action-continuous-translation/) - Complete setup guide and API reference (translated by this action too - see [translation dashboard](https://pelikhan.github.io/action-continuous-translation/dashboard/))
 - ✍️ [**Blog Post**](https://microsoft.github.io/genaiscript/blog/continuous-translations/) - Deep dive into the technology
-- 🌐 **Translations**: [English](./README.md) | [Français](./README.fr.md) | [Español](./README.es.md) | [Portuguese (Brazil)](./README.pt-br.md) | [العربية](./README.ar.md)
+- 🌐 **Translations**: [English](./README.md) | [Français](./README.fr.md) | [Español](./README.es.md) | [Portuguese (Brazil)](./README.pt-br.md) | [العربية](./README.ar.md) | [简体中文](./README.zh.md)
 
 ## 🔧 How It Works
 
