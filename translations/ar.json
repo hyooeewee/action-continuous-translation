@@ -705,5 +705,6 @@
   "[!CAUTION]\nAdvises about risks or negative outcomes of certain actions.": "إرشادات حول المخاطر أو النتائج السلبية لبعض الإجراءات.",
   "![Alt text](https://via.placeholder.com/150x100 \"Image title\")": "النص البديل",
   "When you commit changes to your documentation files, the translation workflow au.1E86ADA9C08E4234DFCE": "عندما تقوم بتأكيد تغييرات على ملفات الوثائق الخاصة بك، يبدأ سير عمل الترجمة تلقائيًا مهمة ترجمة.",
-  "The AI workflow uses Markdown parsers and LLM inference to precisely and increme.D8BEFA7E9137827D19EE": "يستخدم سير العمل بالذكاء الاصطناعي محللات Markdown واستدلال LLM لترجمة مستنداتك بدقة وبشكل تدرجي."
+  "The AI workflow uses Markdown parsers and LLM inference to precisely and increme.D8BEFA7E9137827D19EE": "يستخدم سير العمل بالذكاء الاصطناعي محللات Markdown واستدلال LLM لترجمة مستنداتك بدقة وبشكل تدرجي.",
+  "🌐 **Translations**: [English](./README.md) | [Français](./README.fr.md) | [Espa.C77BAD7215F942C10E5B": "🌐 **الترجمات**: [English](./README.md) | [Français](./README.fr.md) | [Español](./README.es.md) | [Portuguese (Brazil)](./README.pt-br.md) | [العربية](./README.ar.md) | [简体中文](./README.zh.md)"
 }

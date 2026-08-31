@@ -647,5 +647,6 @@
   "[!CAUTION]\nAdvises about risks or negative outcomes of certain actions.": "Aviso sobre riscos ou consequências negativas de certas ações.",
   "![Alt text](https://via.placeholder.com/150x100 \"Image title\")": "Texto alternativo",
   "When you commit changes to your documentation files, the translation workflow au.1E86ADA9C08E4234DFCE": "Quando você faz commit de alterações nos seus arquivos de documentação, o fluxo de trabalho de tradução inicia automaticamente um trabalho de tradução.",
-  "The AI workflow uses Markdown parsers and LLM inference to precisely and increme.D8BEFA7E9137827D19EE": "O fluxo de trabalho de IA utiliza analisadores de Markdown e inferência com LLM para traduzir sua documentação de forma precisa e incremental."
+  "The AI workflow uses Markdown parsers and LLM inference to precisely and increme.D8BEFA7E9137827D19EE": "O fluxo de trabalho de IA utiliza analisadores de Markdown e inferência com LLM para traduzir sua documentação de forma precisa e incremental.",
+  "🌐 **Translations**: [English](./README.md) | [Français](./README.fr.md) | [Espa.C77BAD7215F942C10E5B": "🌐 **Traduções**: [English](./README.md) | [Français](./README.fr.md) | [Español](./README.es.md) | [Português (Brasil)](./README.pt-br.md) | [العربية](./README.ar.md) | [简体中文](./README.zh.md)"
 }
