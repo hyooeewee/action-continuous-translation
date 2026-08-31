@@ -20,7 +20,7 @@
 
 * 📖 [**الوثائق**](https://pelikhan.github.io/action-continuous-translation/) - دليل الإعداد الكامل ومرجع واجهة برمجة التطبيقات (تمت ترجمته أيضًا بواسطة هذا الإجراء - انظر [لوحة تحكم الترجمة](https://pelikhan.github.io/action-continuous-translation/dashboard/))
 * ✍️ [**المقالة**](https://microsoft.github.io/genaiscript/blog/continuous-translations/) - تحليل معمق للتكنولوجيا.
-* 🌐 **الترجمات**: [English](./README.md) | [Français](./README.fr.md) | [Español](./README.es.md) | [Portuguese (Brazil)](./README.pt-br.md) | [العربية](./README.ar.md)
+* 🌐 **الترجمات**: [English](./README.md) | [Français](./README.fr.md) | [Español](./README.es.md) | [Portuguese (Brazil)](./README.pt-br.md) | [العربية](./README.ar.md) | [简体中文](./README.zh.md)
 
 ## 🔧 How It Works
 
