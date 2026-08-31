@@ -56,6 +56,11 @@ jobs:
           starlight_base: action-continuous-translation
           instructions_file: ./instructions.md
           glossary_file: ./glossary.md
+          openai_api_key: ${{ secrets.OPENAI_API_KEY }}
+          openai_api_base: ${{ vars.OPENAI_API_BASE }}
+          model_alias: |
+            translation: openai:${{ vars.TRANSLATION_MODEL }}
+            validation: openai:${{ vars.VALIDATION_MODEL }}
           files: |
             README.md
             docs/src/content/**/*

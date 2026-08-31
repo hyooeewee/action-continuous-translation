@@ -99,12 +99,70 @@ inputs:
       (https://microsoft.github.io/genaiscript/reference/github-actions/#github\
       -models-permissions)."
     required: false
+# PROTOTYPE: composite execution path (replaces `using: docker`).
+# GitHub Actions does not auto-export INPUT_* env for composite actions, so each
+# input is mapped explicitly below (genaiscript reads `input_`-prefixed env vars).
 runs:
-  using: docker
-  image: Dockerfile
+  using: composite
+  steps:
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: "24"
+        cache: npm
+    - name: Install dependencies
+      shell: bash
+      working-directory: ${{ github.action_path }}
+      run: npm ci
+    - name: Run translation
+      id: translator
+      shell: bash
+      working-directory: ${{ github.action_path }}
+      env:
+        INPUT_LANG: ${{ inputs.lang }}
+        INPUT_SOURCE: ${{ inputs.source }}
+        INPUT_FILENAME_TEMPLATE: ${{ inputs.filename_template }}
+        INPUT_INSTRUCTIONS: ${{ inputs.instructions }}
+        INPUT_INSTRUCTIONS_FILE: ${{ inputs.instructions_file }}
+        INPUT_TRANSLATIONS_DIR: ${{ inputs.translations_dir }}
+        INPUT_STARLIGHT_DIR: ${{ inputs.starlight_dir }}
+        INPUT_STARLIGHT_BASE: ${{ inputs.starlight_base }}
+        INPUT_GLOSSARY_FILE: ${{ inputs.glossary_file }}
+        INPUT_MAX_TRANSLATION_TOKENS: ${{ inputs.max_translation_tokens }}
+        INPUT_MAX_VALIDATION_TOKENS: ${{ inputs.max_validation_tokens }}
+        INPUT_FILES: ${{ inputs.files }}
+        INPUT_DEBUG: ${{ inputs.debug }}
+        INPUT_MODEL_ALIAS: ${{ inputs.model_alias }}
+        INPUT_OPENAI_API_KEY: ${{ inputs.openai_api_key }}
+        INPUT_OPENAI_API_BASE: ${{ inputs.openai_api_base }}
+        INPUT_AZURE_OPENAI_API_ENDPOINT: ${{ inputs.azure_openai_api_endpoint }}
+        INPUT_AZURE_OPENAI_API_KEY: ${{ inputs.azure_openai_api_key }}
+        INPUT_AZURE_OPENAI_SUBSCRIPTION_ID: ${{ inputs.azure_openai_subscription_id }}
+        INPUT_AZURE_OPENAI_API_VERSION: ${{ inputs.azure_openai_api_version }}
+        INPUT_AZURE_OPENAI_API_CREDENTIALS: ${{ inputs.azure_openai_api_credentials }}
+        INPUT_AZURE_AI_INFERENCE_API_KEY: ${{ inputs.azure_ai_inference_api_key }}
+        INPUT_AZURE_AI_INFERENCE_API_ENDPOINT: ${{ inputs.azure_ai_inference_api_endpoint }}
+        INPUT_AZURE_AI_INFERENCE_API_VERSION: ${{ inputs.azure_ai_inference_api_version }}
+        INPUT_AZURE_AI_INFERENCE_API_CREDENTIALS: ${{ inputs.azure_ai_inference_api_credentials }}
+        INPUT_GITHUB_TOKEN: ${{ inputs.github_token }}
+        # Unprefixed provider envs: genaiscript 2.3.9 providers read these names
+        # (OPENAI_API_KEY etc.), not the INPUT_* vars (ticket 09, upstream PR #99).
+        OPENAI_API_KEY: ${{ inputs.openai_api_key }}
+        OPENAI_API_BASE: ${{ inputs.openai_api_base }}
+        AZURE_OPENAI_API_KEY: ${{ inputs.azure_openai_api_key }}
+        AZURE_OPENAI_API_ENDPOINT: ${{ inputs.azure_openai_api_endpoint }}
+        AZURE_OPENAI_API_VERSION: ${{ inputs.azure_openai_api_version }}
+        AZURE_OPENAI_API_CREDENTIALS: ${{ inputs.azure_openai_api_credentials }}
+        AZURE_OPENAI_SUBSCRIPTION_ID: ${{ inputs.azure_openai_subscription_id }}
+        AZURE_AI_INFERENCE_API_KEY: ${{ inputs.azure_ai_inference_api_key }}
+        AZURE_AI_INFERENCE_API_ENDPOINT: ${{ inputs.azure_ai_inference_api_endpoint }}
+        AZURE_AI_INFERENCE_API_VERSION: ${{ inputs.azure_ai_inference_api_version }}
+        AZURE_AI_INFERENCE_API_CREDENTIALS: ${{ inputs.azure_ai_inference_api_credentials }}
+      run: npm start
 outputs:
   text:
     description: The generated text output.
+    value: ${{ steps.translator.outputs.text }}
 branding:
   color: yellow
   icon: globe
